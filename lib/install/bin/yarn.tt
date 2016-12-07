@@ -1,0 +1,12 @@
+<%= shebang %>
+
+require 'mkmf'
+
+yarn = find_executable 'yarn'
+
+if yarn
+  exec(*['yarn', ARGV].flatten)
+else
+  puts("Yarn executable was not detected in the system.")
+  puts("Download Yarn at https://yarnpkg.com/en/docs/install")
+end
